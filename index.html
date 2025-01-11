@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>答案之书 - 寻找生活的答案</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧菜单 -->
+        <div class="floating-menu">
+            <button class="menu-item settings-btn" onclick="showSettings()" title="设置">
+                <div class="tarot-icon"></div>
+                <span>设置</span>
+            </button>
+            <button class="menu-item stats-btn" onclick="showStatistics()" title="统计">
+                <div class="tarot-icon"></div>
+                <span>统计</span>
+            </button>
+            <button class="menu-item favorites-btn" onclick="showFavorites()" title="收藏">
+                <div class="tarot-icon"></div>
+                <span>收藏</span>
+            </button>
+        </div>
+
+        <!-- 主要内容区域 -->
+        <div class="main-content">
+            <div class="book-card">
+                <div class="header">
+                    <h1><i class="fas fa-book-open"></i> 答案之书</h1>
+                    <p class="subtitle">寻找生活的答案</p>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                        <span class="progress-text">0/412</span>
+                    </div>
+                </div>
+                <div class="book-content">
+                    <div class="question-section">
+                        <div class="question-prompt">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>在心中默想你的问题</p>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <input type="number" id="numberInput" min="1" max="412" placeholder="1-412">
+                                <div class="number-controls">
+                                    <button id="plusButton" class="control-button">+</button>
+                                    <button id="minusButton" class="control-button">-</button>
+                                </div>
+                            </div>
+                            <button id="getAnswerButton" class="primary-button">
+                                <i class="fas fa-search"></i>
+                                获取答案
+                            </button>
+                        </div>
+                        <div class="quick-actions">
+                            <button id="randomButton" class="secondary-button">
+                                <i class="fas fa-random"></i> 随机数字
+                            </button>
+                            <button class="restart-btn" onclick="clearResult()">
+                                <i class="fas fa-redo"></i> 重新开始
+                            </button>
+                        </div>
+                    </div>
+                    <div class="answer-display">
+                        <div class="answer-text"></div>
+                    </div>
+                    <div id="explanation" class="explanation-box"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部区域 -->
+        <div class="bottom-section">
+            <div class="history-panel">
+                <div class="history-content">
+                    <!-- 历史记录将通过 JavaScript 动态添加 -->
+                </div>
+            </div>
+            <div class="footer">
+                <p>每一个答案都蕴含着智慧 © 2024</p>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3></h3>
+                <button class="close-button" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
